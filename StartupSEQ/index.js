@@ -31,7 +31,7 @@ function search (query, asker) {
       }
     };    
 
-    var result = "@" + asker + " Awesome! " + query + " is where it's at. How about this? " + resultLink;
+    var result = "@" + asker + ". Awesome! " + query + " is where it's at. How about this? " + resultLink;
     post(result);
   })
 }
@@ -41,14 +41,14 @@ function post (content) {
   })
 }
 
-var stream = twitter.stream('statuses/filter', { track: '@StartupSEQ' })
+var stream = twitter.stream('statuses/filter', { track: '@StartupAUEvents' })
 
 stream.on('tweet', function (tweet) {
   var asker = tweet.user.screen_name;
   var text = tweet.text;
 
   // RegExes
-  var greetingRE = /^Hi$/;
+  var greetingRE = /^hi$/;
   var goldcoastRE = /^Gold Coast$/;
   var brisbaneRE = /^Brisbane$/;
   var sydneyRE = /^Sydney$/;
